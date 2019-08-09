@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2014 5:19:39 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+	<class name="it.crem.db.conf.Pagina" table="pagina" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<!-- <generator class="assigned" /> -->
+			<generator class="sequence">
+				<param name="sequence">pagina_oid_seq</param>
+			</generator>
+		</id>
+		<property name="nome" type="string">
+			<column name="nome" />
+		</property>
+		<property name="paginaId" type="string">
+			<column name="id" />
+		</property>
+		<property name="templateName" type="string">
+			<column name="template" />
+		</property>
+		<property name="categoria" type="string">
+			<column name="categoria" />
+		</property>
+		<many-to-one name="template" class="it.crem.db.conf.Template"
+			fetch="select" lazy="false">
+			<column name="template_oid" />
+		</many-to-one>
+	
+		<set name="blocchi" table="blocchi_pagina" inverse="true"
+			lazy="false" fetch="select">
+			<key>
+				<column name="pagina_oid" />
+			</key>
+			<one-to-many class="it.crem.db.conf.BlocchiPagina" />
+		</set>
+	</class>
+</hibernate-mapping>

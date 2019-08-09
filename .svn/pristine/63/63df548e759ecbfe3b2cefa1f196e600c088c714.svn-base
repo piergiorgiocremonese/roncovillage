@@ -1,0 +1,19 @@
+<%@taglib prefix="s" uri="/struts-tags" %>
+
+<div id="blockcnt" >
+
+<center>Registrazione avvenuta con successo</center>
+<table border="1">
+<tr><td colspan="2"><center>Dati Ragazzo</td></tr>
+<tr><td>Nome</td><td><s:property value="ragazzo.nome"/></td></tr>
+<tr><td>Cognome</td><td><s:property value="ragazzo.cognome"/></td></tr>
+<tr><td>Indirizzo</td><td><s:property value="ragazzo.indirizzo"/></td></tr>
+</table>
+<p>
+Scarica i moduli di iscrizione e sanitario da riportare firmati al camp: 
+<a href="download?file=/var/docs/ronco/modulo_iscrizione_roncovillage_2018.pdf" target="_blank" >Scarica modulo di iscrizione</a> 
+</p>
+<p>
+<a href="download?file=/var/docs/ronco/vaccinazioni.pdf" target="_blank" >Scarica modulo sanitario</a> 
+</p>
+</div>

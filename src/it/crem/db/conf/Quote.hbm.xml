@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2016 7:22:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="it.crem.db.conf.Quote" table="quote" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<generator class="sequence">
+				<param name="sequence">quote_oid_seq</param>
+			</generator>
+		</id>
+		<property name="anno" type="string">
+			<column name="anno" />
+		</property>
+		<property name="importo" type="java.lang.Double">
+			<column name="importo" precision="17" scale="17" />
+		</property>
+		<property name="tipo" type="string">
+			<column name="tipo" />
+		</property>
+	</class>
+</hibernate-mapping>

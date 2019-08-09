@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2014 5:19:39 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+    <class name="it.crem.db.conf.Pagamenti" table="pagamenti" schema="public">
+        <id name="oid" type="int">
+            <column name="oid" />
+           <!--  <generator class="assigned" />  -->
+             <generator class="sequence">
+				<param name="sequence">pagamenti_oid_seq</param>
+			</generator>
+        </id>
+       <many-to-one name="ragazzo" class="it.crem.db.conf.Ragazzi" fetch="select">
+            <column name="ragazzo_oid" />
+        </many-to-one>
+      
+      
+        <!-- <many-to-one name="request" class="it.ash.ticinohelth.db.conf.CustomerRequest" fetch="select">
+            <column name="request_oid" />
+        </many-to-one> -->
+        <property name="amount" type="java.lang.Double">
+            <column name="amount" />
+        </property>
+        <property name="riferimento" type="string">
+            <column name="riferimento" />
+        </property>
+         <property name="tipo" type="string">
+            <column name="tipo" />
+        </property>
+         <property name="fatturaEmessa" type="boolean">
+            <column name="fattura_emessa" />
+        </property>
+        <property name="fattura" type="string">
+            <column name="fattura" />
+        </property>
+        <property name="completo" type="boolean">
+            <column name="completo" />
+        </property>
+       <property name="data" type="java.util.Date">
+            <column name="data" />
+        </property>
+      <!-- <property name="modified" type="java.util.Date">
+            <column name="modified" />
+        </property> -->   
+      <property name="anno" type="integer">
+      <column name="anno" />
+      </property>
+      <property name="numero" type="integer">
+      <column name="numero" />
+      </property>
+      <property name="causale" type="string">
+            <column name="causale" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

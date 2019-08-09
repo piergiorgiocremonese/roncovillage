@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+  
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+	  <param name="Threshold" value="fatal"/>
+	  <param name="Target" value="System.out"/>
+	  <layout class="org.apache.log4j.PatternLayout">
+	     <param name="ConversionPattern" value="%d{ISO8601}|%-5p|AGS - %c{1}.%M(%F:%L) - %m%n"/>
+	  </layout>
+	</appender>
+                       
+	<appender name="generic" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.home}/logs/general.log "/>
+		<param name="Threshold" value="info"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+	         <param name="ConversionPattern" value="%d{ISO8601}|%-5p|AGS|%t - %c{1}.%M(%F:%L) - %m%n"/>
+		</layout>               		       
+	</appender>
+
+	<appender name="fatalfile" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${catalina.home}/logs/fatal.log"/>
+		<param name="Threshold" value="error"/>
+		<layout class="org.apache.log4j.PatternLayout">
+	         <param name="ConversionPattern" value="%d{ISO8601}|%-5p|AGS|%t - %c{1}.%M(%F:%L) - %m%n"/>
+		</layout>               		       
+	</appender>
+  
+     
+
+	<!-- module contentframework appender -->
+	<appender name="ronco" class="org.apache.log4j.DailyRollingFileAppender">
+	   <param name="File" value="${catalina.home}/logs/ronco.log"/>
+	   <param name="Threshold" value="debug"/>
+	   <param name="Append" value="true"/>
+	   <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+	   <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%d{ISO8601}|%-5p|APA|%t - %c{1}.%M(%F:%L) - %m%n"/>
+	   </layout>
+	</appender>
+	<appender name="struts" class="org.apache.log4j.DailyRollingFileAppender">
+	   <param name="File" value="${catalina.home}/logs/struts.log"/>
+	   <param name="Threshold" value="debug"/>
+	   <param name="Append" value="true"/>
+	   <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+	   <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%d{ISO8601}|%-5p|APA|%t - %c{1}.%M(%F:%L) - %m%n"/>
+	   </layout>
+	</appender>
+	
+	<!--<appender name="dbinfo" class="org.apache.log4j.DailyRollingFileAppender">
+	   <param name="File" value="${catalina.home}/logs/db.log"/>
+	   <param name="Threshold" value="debug"/>
+	   <param name="Append" value="true"/>
+	   <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+	   <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%d{ISO8601}|%-5p|APA|%t - %c{1}.%M(%F:%L) - %m%n"/>
+	   </layout>
+	</appender>-->
+	
+	
+	
+	
+
+	<!-- module framework logger -->
+	<logger name="it.crem" additivity="false">
+		<level value="debug"/>
+		<appender-ref ref="ronco"/>
+	</logger>
+	<logger name="it.ash" additivity="false">
+		<level value="debug"/>
+		<appender-ref ref="ronco"/>
+	</logger>
+	
+	<logger name="org" additivity="false">
+		<level value="debug"/>
+		<appender-ref ref="struts"/>
+	</logger>
+	
+	
+	
+
+
+	<!-- root log -->
+	<root>
+		<level value="error"/>		
+		<appender-ref ref="generic"/>
+		<appender-ref ref="console"/>
+		<appender-ref ref="fatalfile"/>
+	</root>
+	     
+</log4j:configuration>

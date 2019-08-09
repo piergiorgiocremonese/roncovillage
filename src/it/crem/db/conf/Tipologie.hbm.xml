@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2016 7:22:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="it.crem.db.conf.Tipologie" table="tipologie" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<generator class="sequence">
+				<param name="sequence">tipologie_oid_seq</param>
+			</generator>
+		</id>
+		<property name="forma" type="string">
+			<column name="forma" />
+		</property>
+		<property name="costoUnitario" type="java.lang.Double">
+			<column name="costo_unitario" precision="17" scale="17" />
+		</property>
+		<property name="costoTotale" type="java.lang.Double">
+			<column name="costo_totale" precision="17" scale="17" />
+		</property>
+		<property name="tipo" type="string">
+			<column name="tipo" />
+		</property>
+		<property name="numSettimane" type="integer">
+			<column name="num_settimane" />
+		</property>
+		<property name="familiare" type="boolean">
+			<column name="familiare" />
+		</property>
+		<property name="mensa" type="boolean">
+			<column name="mensa" />
+		</property>
+		<property name="fullDay" type="boolean">
+			<column name="full_day" />
+		</property>
+
+		<set name="partecipantis" table="partecipanti" inverse="true"
+			lazy="true" fetch="select">
+			<key>
+				<column name="tipo_oid" />
+			</key>
+			<one-to-many class="it.crem.db.conf.Partecipanti" />
+		</set>
+	</class>
+</hibernate-mapping>

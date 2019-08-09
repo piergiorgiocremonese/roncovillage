@@ -1,0 +1,2 @@
+ALTER TABLE sconti
+  ADD CONSTRAINT sconti_uni_idx UNIQUE(anno, ragazzo_oid);

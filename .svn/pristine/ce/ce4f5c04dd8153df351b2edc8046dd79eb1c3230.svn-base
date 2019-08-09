@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2016 7:22:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="it.crem.db.conf.Foto" table="foto"
+		schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<generator class="sequence">
+				<param name="sequence">foto_oid_seq</param>
+			</generator>
+		</id>
+		<property name="name" type="string">
+			<column name="name" />
+		</property>
+		<property name="iconName" type="string">
+			<column name="icon_name" />
+		</property>
+		<property name="iconPath" type="string">
+			<column name="icon_path" />
+		</property>
+		<property name="url" type="string">
+			<column name="url" />
+		</property>
+		<property name="iconUrl" type="string">
+			<column name="icon_url" />
+		</property>
+		
+		
+		<property name="path" type="string">
+			<column name="path" />
+		</property>
+		<property name="mime" type="string">
+			<column name="mime" />
+		</property>
+		<property name="width" type="java.lang.Double">
+			<column name="width" />
+		</property>
+		<property name="height" type="java.lang.Double">
+			<column name="height" />
+		</property>
+		<property name="iconWidth" type="java.lang.Double">
+			<column name="icon_width" />
+		</property>
+		<property name="iconHeight" type="java.lang.Double">
+			<column name="icon_height" />
+		</property>
+		<property name="creation" type="java.util.Date">
+			<column name="creation" />
+		</property>
+		<many-to-one name="gruppo" class="it.crem.db.conf.GruppiFoto"
+			fetch="select" lazy="false">
+			<column name="gruppo_oid" />
+		</many-to-one>
+	
+	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2016 7:22:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+	<class name="it.crem.db.conf.Ragazzi" table="ragazzi" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<generator class="sequence">
+				<param name="sequence">ragazzi_oid_seq</param>
+			</generator>
+		</id>
+		<many-to-one name="ragazzi" class="it.crem.db.conf.Ragazzi"
+			fetch="select">
+			<column name="parent_oid" />
+		</many-to-one>
+		<property name="nome" type="string">
+			<column name="nome" />
+		</property>
+		<property name="cognome" type="string">
+			<column name="cognome" />
+		</property>
+		<property name="padre" type="string">
+			<column name="padre" />
+		</property>
+		<property name="codifiscPadre" type="string">
+			<column name="codifisc_padre" />
+		</property>
+		<!-- 
+		<property name="annoNascita" type="java.lang.Integer">
+			<column name="anno_nascita" />
+		</property>
+		-->
+		<property name="cittaNascita" type="string">
+			<column name="citta_nascita" />
+		</property>
+		<property name="indirizzo" type="string">
+			<column name="indirizzo" />
+		</property>
+		<property name="madre" type="string">
+			<column name="madre" />
+		</property>
+		<property name="codfiscMadre" type="string">
+			<column name="codfisc_madre" />
+		</property>
+		<property name="mailInviata" type="string">
+			<column name="mail_inviata" />
+		</property>
+		<property name="periodi" type="string">
+			<column name="periodi" />
+		</property>
+		<property name="fratelli" type="string">
+			<column name="fratelli" />
+		</property>
+		<property name="cellMadre" type="string">
+			<column name="cell_madre" />
+		</property>
+		<property name="cellPadre" type="string">
+			<column name="cell_padre" />
+		</property>
+		<property name="telWorkPadre" type="string">
+			<column name="tel_work_padre" />
+		</property>
+		<property name="telWorkMadre" type="string">
+			<column name="tel_work_madre" />
+		</property>
+		<property name="telcasa" type="string">
+			<column name="tel_casa" />
+		</property>
+		<property name="emailMadre" type="string">
+			<column name="email_madre" />
+		</property>
+		<property name="emailPadre" type="string">
+			<column name="email_padre" />
+		</property>
+		<property name="accompagnatore" type="string">
+			<column name="accompagnatore" />
+		</property>
+		<property name="telAccompagnatore" type="string">
+			<column name="tel_accompagnatore" />
+		</property>
+		<property name="intolleranze" type="string">
+			<column name="intolleranze" />
+		</property>
+		<property name="allergie" type="string">
+			<column name="allergie" />
+		</property>
+		<property name="code" type="string">
+			<column name="code" />
+		</property>
+		<property name="classeFrequentata" type="string">
+			<column name="classe_frequentata" />
+		</property>
+
+		<property name="dataNascita" type="java.util.Date">
+			<column name="data_nascita" />
+		</property>
+		<property name="familiari" type="boolean">
+			<column name="familiari" />
+		</property>
+		<property name="pagamento" type="string">
+			<column name="pagamento" />
+		</property>
+		<property name="sconto" type="java.lang.Double">
+			<column name="sconto" />
+		</property>
+		<set name="presenzes" table="presenze" inverse="true" lazy="true"
+			fetch="select">
+			<key>
+				<column name="ragazzo_oid" not-null="true" />
+			</key>
+			<one-to-many class="it.crem.db.conf.Presenze" />
+		</set>
+		<set name="ragazzis" table="ragazzi" inverse="true" lazy="false"
+			fetch="select">
+			<key>
+				<column name="parent_oid" />
+			</key>
+			<one-to-many class="it.crem.db.conf.Ragazzi" />
+		</set>
+		<set name="partecipantis" table="partecipanti" inverse="true"
+			lazy="false" fetch="select">
+			<key>
+				<column name="ragazzo_oid" />
+			</key>
+			<one-to-many class="it.crem.db.conf.Partecipanti" />
+		</set>
+
+		<set name="allegati" table="allegati" inverse="true" lazy="false"
+			fetch="select">
+			<key>
+				<column name="ragazzo_oid" not-null="true" />
+			</key>
+			<one-to-many class="it.crem.db.conf.Allegati" />
+		</set>
+	</class>
+</hibernate-mapping>

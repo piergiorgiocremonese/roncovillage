@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!--
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+ */
+-->
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  <definition name="home" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+   <definition name="regform" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/reg-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+   <definition name="regesito" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/reg-esito.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+ <definition name="informazioni" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/info-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+ <definition name="posizione" template="/jsp/google-tpl.jsp">
+       <put-attribute name="body" value="/jsp/map-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage Map"/>
+  </definition>
+ <definition name="contatti" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/contact-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+ <definition name="esitomail" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/esito-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="esito" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/esito-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+ 
+ 
+   
+  <definition name="errore" template="/jsp/main-tpl.jsp">
+        <put-attribute name="body" value="/jsp/errore.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="mylogin" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/login-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+     <definition name="privatehome" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/private-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="searchform" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/search-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="lista" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/lista-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="ragazzi" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/ragazzi-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="ragazzo" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/reg-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="esitopriv" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/esito-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+   <definition name="esitopub" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/esito-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="presenzeform" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/pres-search-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="presenze" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/presenze-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="presenzesingolo" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/singolo-presenze-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="tipologie" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/lista-tipologie.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="tipologia" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/tipologia-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="pagamenti" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/pagamenti-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="pagamento" template="/jsp/fattura-tpl.jsp">
+       <put-attribute name="body" value="/jsp/pagamento-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="fattura" template="/jsp/fattura-pdf-tpl.jsp">
+       <put-attribute name="body" value="/jsp/view-pagamento-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="quadro" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/quadro-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="registro" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/registro-body.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="gruppi" template="/jsp/main-tpl.jsp">
+       <put-attribute name="body" value="/jsp/lista-gruppi.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="gruppomng" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/gruppomng.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+   <definition name="fotomng" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/fotomng.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="gruppimng" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/lista-gruppi-mng.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+   <definition name="fotolist" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/lista-foto-mng.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  
+  <definition name="sfogliaalbum" template="/jsp/foto-tpl.jsp">
+       <put-attribute name="body" value="/jsp/album.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+   <definition name="scorrialbum" template="/jsp/foto-tpl.jsp">
+       <put-attribute name="body" value="/jsp/albumsingle.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="plainalbum" template="/jsp/foto-tpl.jsp">
+       <put-attribute name="body" value="/jsp/autoalbum.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+   <definition name="archivio" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/lista-archivio.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+  <definition name="archivioRagazzi" template="/jsp/priv-tpl.jsp">
+       <put-attribute name="body" value="/jsp/archivioRagazzi.jsp"/>
+        <put-attribute name="titlearea" value="RoncoVillage"/>
+  </definition>
+       <!-- end to be deleted -->
+</tiles-definitions>

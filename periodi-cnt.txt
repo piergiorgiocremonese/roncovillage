@@ -1,0 +1,24 @@
+<ul id="lista-moduli">
+
+<li> 
+Modulo di iscrizione con la liberatoria per la privacy:
+<a id="modulo-iscrizione"  href="#" target="_blank">
+<input id="button-modulo-iscrizione" type=\"button\" value=\"Scarica Modulo Iscrizione\" name=\"scarica\" disabled=true/>
+</a>
+</li>
+<li> 
+Modulo informativa trattamento dati personali:
+<a id="modulo-liberatoria"  href="#" target="_blank">
+<input id="button-modulo-liberatoria" type=\"button\" value=\"Scarica Informativa\" name=\"scarica\" disabled=true/>
+</a>
+</li>
+<li> 
+ Modulo relativo alla copertura sanitaria (vaccinazioni):
+<a id="modulo-vaccinazioni"  href="#" target="_blank">
+<input id="button-modulo-vaccinazioni" type=\"button\" value=\"Scarica Modulo\" name=\"scarica\" disabled=true/>
+</a>
+
+</li>
+
+
+</ul>

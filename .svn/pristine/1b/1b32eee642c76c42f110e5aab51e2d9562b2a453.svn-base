@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2016 7:22:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="it.crem.db.conf.GruppiFoto" table="gruppi_foto" schema="public">
+        <id name="oid" type="int">
+            <column name="oid" />
+            <generator class="sequence">
+                <param name="sequence">gruppi_foto_oid_seq</param>
+            </generator>
+        </id>
+        <property name="nome" type="string">
+            <column name="nome" />
+        </property>
+        <property name="icona" type="string">
+            <column name="icona" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" />
+        </property>
+        <property name="cartella" type="string">
+            <column name="cartella" />
+        </property>
+        <property name="path" type="string">
+            <column name="path" />
+        </property>
+        <property name="webpath" type="string">
+            <column name="webpath" />
+        </property>
+        <property name="album" type="string">
+            <column name="album" />
+        </property>
+        <property name="anno" type="string">
+            <column name="anno" />
+        </property>
+        <property name="numero" type="integer">
+            <column name="numero" />
+        </property>
+    </class>
+</hibernate-mapping>

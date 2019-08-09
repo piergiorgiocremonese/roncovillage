@@ -1,0 +1,9 @@
+ronco.root=ronco
+db.seq.Giornate=giornate_oid_seq
+db.seq.Partecipanti=partecipanti_oid_seq
+db.seq.Periodi=periodi_oid_seq
+db.seq.Quote=quote_oid_seq
+db.seq.Ragazzi=ragazzi_oid_seq
+db.seq.Tipologie=tipologie_oid_seq
+db.seq.Utenti=utenti_oid_seq
+db.seq.Allegati=allegati_oid_seq

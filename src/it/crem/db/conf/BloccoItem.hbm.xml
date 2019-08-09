@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2014 5:19:39 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+	<class name="it.crem.db.conf.BloccoItem" table="blocco_item" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<!-- <generator class="assigned" /> -->
+			<generator class="sequence">
+				<param name="sequence">blocco_item_oid_seq</param>
+			</generator>
+		</id>
+		<many-to-one name="blocco" class="it.crem.db.conf.Blocchi"
+			fetch="select" lazy="false">
+			<column name="blocco_oid" />
+		</many-to-one>
+		<property name="info" type="string">
+			<column name="info" />
+		</property>
+		<property name="tipo" type="string">
+			<column name="tipo" />
+		</property>
+		<property name="ordine" type="int">
+			<column name="ordine" />
+		</property>
+		<property name="width" type="int">
+			<column name="width" />
+		</property>
+		<property name="height" type="int">
+			<column name="height" />
+		</property>
+		<property name="itemId" type="string">
+			<column name="item_id" />
+		</property>
+		<property name="media" type="string">
+			<column name="media" />
+		</property>
+		<property name="left" type="int">
+			<column name="left" />
+		</property>
+		<property name="right" type="int">
+			<column name="right" />
+		</property>
+		<property name="top" type="int">
+			<column name="top" />
+		</property>
+		<property name="bottom" type="int">
+			<column name="bottom" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

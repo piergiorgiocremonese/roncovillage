@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2016 7:22:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+    <class name="it.crem.db.conf.Presenze" table="presenze" schema="public">
+       <id name="oid" type="int">
+            <column name="oid" />
+            <generator class="sequence">
+                <param name="sequence">presenze_oid_seq</param>
+            </generator>
+        </id>
+        
+        <many-to-one name="ragazzi" class="it.crem.db.conf.Ragazzi"  fetch="select" lazy="false">
+            <column name="ragazzo_oid" not-null="true" />
+        </many-to-one>
+        <property name="completo" type="java.lang.Boolean">
+            <column name="completo" />
+        </property>
+        <property name="mensa" type="java.lang.Boolean">
+            <column name="mensa" />
+        </property>
+        <property name="mattina" type="java.lang.Boolean">
+            <column name="mattina" />
+        </property>
+        <property name="pomeriggio" type="java.lang.Boolean">
+            <column name="pomeriggio" />
+        </property>
+        <property name="giorno" type="java.util.Date">
+            <column name="giorno" />
+        </property>
+        <property name="presente" type="java.lang.Boolean">
+            <column name="presente" />
+        </property>
+    </class>
+</hibernate-mapping>

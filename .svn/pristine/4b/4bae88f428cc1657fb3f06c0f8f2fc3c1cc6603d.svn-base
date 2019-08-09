@@ -1,0 +1,6 @@
+insert into periodi (ordine,inizio,fine,anno) values ('1','2016-07-04','2016-07-08','2016')
+insert into periodi (ordine,inizio,fine,anno) values ('2','2016-07-11','2016-07-15','2016')
+insert into periodi (ordine,inizio,fine,anno) values ('3','2016-07-18','2016-07-22','2016')
+insert into periodi (ordine,inizio,fine,anno) values ('4','2016-07-25','2016-07-29','2016')
+insert into periodi (ordine,inizio,fine,anno) values ('5','2016-08-01','2016-08-05','2016')
+insert into periodi (ordine,inizio,fine,anno) values ('6','2016-08-08','2016-08-12','2016')

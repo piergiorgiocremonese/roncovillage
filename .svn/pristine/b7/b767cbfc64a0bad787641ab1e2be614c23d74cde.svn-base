@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2016 7:22:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="it.crem.db.conf.Periodi" table="periodi" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<generator class="sequence">
+				<param name="sequence">periodi_oid_seq</param>
+			</generator>
+		</id>
+		<property name="ordine" type="string">
+			<column name="ordine" />
+		</property>
+		<property name="inizio" type="timestamp">
+			<column name="inizio" length="35" />
+		</property>
+		<property name="fine" type="timestamp">
+			<column name="fine" length="35" />
+		</property>
+		<property name="anno" type="string">
+			<column name="anno" />
+		</property>
+		<property name="libero" type="boolean">
+			<column name="libero" />
+		</property>
+		<property name="numeroMassimo" type="integer">
+			<column name="numero_massimo" />
+		</property>
+		<set name="partecipantis" table="partecipanti" inverse="true"
+			lazy="true" fetch="select">
+			<key>
+				<column name="periodo_oid" />
+			</key>
+			<one-to-many class="it.crem.db.conf.Partecipanti" />
+		</set>
+
+	</class>
+</hibernate-mapping>

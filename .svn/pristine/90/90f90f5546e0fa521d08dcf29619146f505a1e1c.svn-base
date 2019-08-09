@@ -1,0 +1,41 @@
+package it.crem.db;
+
+
+import java.lang.reflect.Method;
+
+public class BaseObject {
+	
+	private int oid = 0;
+
+	public int getOid() {
+		return oid;
+	}
+
+	public void setOid(int oid) {
+		this.oid = oid;
+	}
+	
+	public Integer getIntValue(String object, String meth){
+		Object o = null;
+		Class noparams[] = {};
+		Integer l = null;
+		try{
+			//String meth = "get"+field;
+			Class cls = this.getClass();
+			//Class cls = Class.forName(object);
+			Object obj = cls.newInstance();
+			Method method = cls.getDeclaredMethod(meth, noparams);
+			o=method.invoke(this, null);
+			l = (Integer)o;
+		}
+		catch (Exception E){
+			System.out.println(E.toString());
+		}
+		
+		
+		return l;
+		
+	}
+	
+
+}

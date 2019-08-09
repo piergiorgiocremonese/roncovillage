@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 21, 2015 7:13:12 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="it.crem.db.conf.Utenti" table="utenti" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<generator class="sequence">
+				<param name="sequence">utenti_oid_seq</param>
+			</generator>
+		</id>
+
+		<property name="login" type="string">
+			<column name="login" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" />
+		</property>
+		<property name="email" type="string">
+			<column name="email" />
+		</property>
+		<property name="nome" type="string">
+			<column name="nome" />
+		</property>
+		<property name="cognome" type="string">
+			<column name="cognome" />
+		</property>
+
+	</class>
+</hibernate-mapping>

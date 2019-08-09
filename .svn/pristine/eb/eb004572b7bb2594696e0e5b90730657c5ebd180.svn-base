@@ -1,0 +1,16 @@
+<%@taglib prefix="s" uri="/struts-tags" %>
+
+<div id="blockcnt" >
+
+<center>Registrazione avvenuta con successo</center>
+<table border="1">
+<tr><td colspan="2"><center>Dati Ragazzo</td></tr>
+<tr><td>Nome</td><td><s:property value="ragazzo.nome"/></td></tr>
+<tr><td>Cognome</td><td><s:property value="ragazzo.cognome"/></td></tr>
+<tr><td>Indirizzo</td><td><s:property value="ragazzo.indirizzo"/></td></tr>
+</table>
+<p>
+Scarica il modulo di iscrizione da riportare firmato al camp: 
+<a href="download?file=/var/www/ronco/docs/modulo_iscrizione_ronco_village_2016.pdf" target="_blank" >Scarica</a> 
+</p>
+</div>

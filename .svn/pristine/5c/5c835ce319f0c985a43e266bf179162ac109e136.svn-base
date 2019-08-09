@@ -1,0 +1,42 @@
+<%@taglib prefix="s" uri="/struts-tags" %>
+
+<div style="position:absolute;left:0px;top:0px">
+<img src="images/bosco-2.jpg"/>
+</div>
+
+<!-- 
+	<div style="position:absolute;top:0px;left:840px;width:440px;height:630px;color:red;background-color:green">
+-->
+<div style="position:absolute;top:0px;left:840px;width:440px;height:630px;color:red;background-image:url('images/golf.jpg')">	
+
+<div style="position:absolute;top:50px;left:50px;color:red">
+
+<h1><b>Rivolto a tutti i bambini nati dal 2011 al 2003</b></h1>
+<h1><b>Periodi</b></h1>
+<div style="font-size:x-large">
+<ul>
+<li>1 Settimana: 3-7 Luglio</li>
+<li>2 Settimana: 10-14 Luglio</li>
+<li>3 Settimana: 17-21 Luglio</li>
+<li>4 Settimana: 24-28 Luglio</li>
+<li>5 Settimana: 31 Luglio-4 Agosto</li>
+<li>6 Settimana: 7-11 Agosto</li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="iscrizione" style="color:red">Iscriviti Subito</a></p> 
+</div>
+</div>
+</div>
+<div style="position:absolute;top:620px;left:0px;width:480px;height:640px;background-image:url('images/gruppetto.jpg')">
+
+</div>
+<!--
+<div style="position:absolute;left:0px;top:700px">
+ <img src="images/muro2-little.jpg"/> 
+</div>
+-->
+<div style="position:absolute;left:430px;top:620px">
+<img src="images/campo.jpg"/>
+</div>
+
+

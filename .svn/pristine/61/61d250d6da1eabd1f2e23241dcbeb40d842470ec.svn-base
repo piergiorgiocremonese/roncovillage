@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2014 5:19:39 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+	<class name="it.crem.db.conf.Documenti" table="documenti" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<!-- <generator class="assigned" /> -->
+			<generator class="sequence">
+				<param name="sequence">documenti_oid_seq</param>
+			</generator>
+		</id>
+		<property name="nome" type="string">
+			<column name="nome" />
+		</property>
+		<property name="path" type="string">
+			<column name="path" />
+		</property>
+		<property name="url" type="string">
+			<column name="url" />
+		</property>
+		<property name="tipo" type="string">
+			<column name="tipo" />
+		</property>
+		<property name="descrizione" type="string">
+			<column name="descrizione" />
+		</property>
+		<property name="keywords" type="string">
+			<column name="keywords" />
+		</property>
+		<property name="mime" type="string">
+			<column name="mime" />
+		</property>
+		<property name="anno" type="integer">
+			<column name="anno" />
+		</property>
+		<property name="creazione" type="java.util.Date">
+			<column name="creazione" />
+		</property>
+		<property name="image" type="binary">
+			<column name="image" />
+		</property>
+	</class>
+</hibernate-mapping>

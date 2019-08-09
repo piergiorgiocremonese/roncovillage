@@ -1,0 +1,40 @@
+<%@taglib prefix="s" uri="/struts-tags" %>
+
+
+<p><center>Lista Azioni Archivio</center></p>
+<center>
+<table>
+
+<s:iterator var="g" value="anni" status="stat">
+<tr><td colspan="2">ANNO <s:property value="#g"/></td></tr>
+	<tr>
+	<td colspan="2"><img src="<s:property value="icona"/>"></td>
+	</tr>
+	<tr>
+	<td>Registro Pagamenti</td><td><a href="showRegistro?anno=<s:property value="#g"/>">Guarda</a></td>
+	</tr>
+	<tr>
+	<td>Quadro Pagamenti</td><td><a href="getQuadro?anno=<s:property value="#g"/>">Guarda</a></td>
+	</tr>
+	</tr>
+	<tr>
+	<td>Ragazzi iscritti</td><td><a href="ragazziAnno?anno=<s:property value="#g"/>">Guarda</a></td>
+	</tr>
+	<tr>
+	<td>Gallery</td>
+	<td>
+	<a href="listaGruppi?op=view&anno=<s:property value="#g"/>" >Guarda</a>
+	</td>
+	</tr>	
+	<tr>
+	<td>Gallery Management</td>
+	<td>
+	<a href="listaGruppi?op=mng&anno=<s:property value="#g"/>" >Guarda</a>
+	</td>
+	</tr>	
+	<tr><td colspan="2">&nbsp;</td></tr>
+</s:iterator>
+
+</table>
+
+</center>

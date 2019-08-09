@@ -1,0 +1,304 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<constant name="struts.multipart.maxSize" value="15000000" />
+	<package name="default" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+
+			<interceptor name="mylogin"
+				class="it.ash.web.interceptors.LoginInterceptor" />
+
+			<interceptor-stack name="myloginStack">
+				<interceptor-ref name="mylogin" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+
+
+
+
+		</interceptors>
+
+		<default-interceptor-ref name="defaultStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="success" type="tiles">home</result>
+			<result name="result" type="tiles">home</result>
+
+			<result name="mylogin" type="redirectAction">
+				<param name="actionName">mylogin</param>
+			</result>
+
+
+		</global-results>
+
+
+		<action name="mylogin" class="it.ash.web.actions.LoginAction"
+			method="login">
+			<result name="view" type="tiles">mylogin</result>
+			<result name="form" type="tiles">mylogin</result>
+
+			<result name="success" type="redirectAction">
+				<param name="actionName">privateHome</param>
+			</result>
+
+
+
+		</action>
+		<action name="logout" class="it.ash.web.actions.LoginAction"
+			method="logout">
+			<result name="success" type="tiles">home</result>
+		</action>
+		<action name="iscrizione" class="it.crem.server.actions.Registrazione"
+			method="show">
+			<result name="success" type="tiles">home</result>
+			<result name="form" type="tiles">regform</result>
+		</action>
+		<action name="registrazione" class="it.crem.server.actions.Registrazione">
+			<result name="success" type="tiles">home</result>
+			<result name="form" type="tiles">regform</result>
+		</action>
+		<action name="visualizza" class="it.crem.server.actions.Registrazione"
+			method="show">
+			<result name="success" type="tiles">regform</result>
+			<result name="form" type="tiles">regform</result>
+		</action>
+
+		<action name="registra" class="it.crem.server.actions.Registrazione"
+			method="save">
+			<result name="success" type="tiles">regesito</result>
+			<result name="privsuccess" type="tiles">esitopriv</result>
+			<result name="pubsuccess" type="tiles">esitopub</result>
+			<result name="failure" type="tiles">esitopub</result>
+		</action>
+
+		<action name="home" class="it.crem.server.actions.Welcome"
+			method="welcome">
+			<result name="success" type="tiles">home</result>
+		</action>
+		<action name="privateHome" class="it.crem.server.actions.Welcome"
+			method="welcome">
+			<result name="success" type="tiles">privatehome</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="informazioni" class="it.crem.server.actions.Welcome"
+			method="show">
+			<result name="success" type="tiles">informazioni</result>
+		</action>
+		<action name="contatti" class="it.crem.server.actions.Welcome"
+			method="show">
+			<result name="success" type="tiles">contatti</result>
+		</action>
+		<action name="sendMail" class="it.crem.server.actions.Welcome"
+			method="send">
+			<result name="success" type="tiles">esitomail</result>
+		</action>
+		<action name="posizione" class="it.crem.server.actions.Welcome"
+			method="show">
+			<result name="success" type="tiles">posizione</result>
+		</action>
+
+		<action name="periodi" class="it.crem.server.actions.Ricerca"
+			method="show">
+			<result name="success" type="tiles">periodi</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="periodo" class="it.crem.server.actions.Ricerca"
+			method="periodo">
+			<result name="success" type="tiles">periodo</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="updPeriodo" class="it.crem.server.actions.Ricerca"
+			method="updPeriodo">
+			<result name="success" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+
+		<action name="searchForm" class="it.crem.server.actions.Ricerca"
+			method="show">
+			<result name="success" type="tiles">searchform</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="search" class="it.crem.server.actions.Ricerca"
+			method="search">
+			<result name="success" type="tiles">lista</result>
+			<result name="tutti" type="tiles">ragazzi</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="viewRagazzo" class="it.crem.server.actions.Registrazione"
+			method="show">
+			<result name="success" type="tiles">ragazzo</result>
+			<result name="form" type="tiles">ragazzo</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="aggiorna" class="it.crem.server.actions.Registrazione"
+			method="save">
+			<result name="privsuccess" type="tiles">esitopriv</result>
+			<result name="pubsuccess" type="tiles">esitopub</result>
+			<result name="success" type="tiles">regesito</result>
+			
+		</action>
+		<action name="deleteRagazzo" class="it.crem.server.actions.Ricerca"
+			method="deleteRagazzo">
+			<result name="success" type="tiles">esitopriv</result>
+			<result name="failure" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="presenzeForm" class="it.crem.server.actions.Ricerca"
+			method="presenzeForm">
+			<result name="success" type="tiles">presenzeform</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="presenze" class="it.crem.server.actions.Ricerca"
+			method="presenze">
+			<result name="success" type="tiles">presenze</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="savePresenze" class="it.crem.server.actions.Ricerca"
+			method="salva">
+			<result name="success" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="listaPresenze" class="it.crem.server.actions.Ricerca"
+			method="presenzeRagazzo">
+			<result name="success" type="tiles">presenzesingolo</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="listaPagamenti" class="it.crem.server.actions.PagamentiAction"
+			method="lista">
+			<result name="success" type="tiles">pagamenti</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="viewPagamento" class="it.crem.server.actions.PagamentiAction"
+			method="show">
+			<result name="modifica" type="tiles">pagamento</result>
+			<result name="fattura" type="tiles">fattura</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="registraPagamento" class="it.crem.server.actions.PagamentiAction"
+			method="save">
+			<result name="success" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="updPagamento" class="it.crem.server.actions.PagamentiAction"
+			method="save">
+			<result name="success" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="getQuadro" class="it.crem.server.actions.PagamentiAction"
+			method="getQuadro">
+			<result name="success" type="tiles">quadro</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="downloadQuadro" class="it.crem.server.actions.PagamentiAction"
+			method="download">
+			<result name="failure" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		
+		<action name="downloadIscritti" class="it.crem.server.actions.Ricerca"
+			method="downloadIscritti">
+			<result name="failure" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="downloadPeriodo" class="it.crem.server.actions.Ricerca"
+			method="download">
+			<result name="failure" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="showRegistro" class="it.crem.server.actions.PagamentiAction"
+			method="showRegistro">
+			<result name="success" type="tiles">registro</result>
+			<result name="failure" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="downloadRegistro" class="it.crem.server.actions.PagamentiAction"
+			method="downloadRegistro">
+			<result name="failure" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="showArchivio" class="it.crem.server.actions.ArchiveAction"
+			method="execute">
+			<result name="success" type="tiles">archivio</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="ragazziAnno" class="it.crem.server.actions.Ricerca"
+			method="ragazziAnno">
+			<result name="success" type="tiles">archivioRagazzi</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="ragazziRegistrati" class="it.crem.server.actions.Ricerca"
+			method="ragazziRegistrati">
+			<result name="success" type="tiles">archivioRagazzi</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		
+		<action name="inform" class="it.crem.server.actions.ArchiveAction"
+			method="inform">
+			<result name="success" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="download" class="it.ash.web.actions.DownloadAction"
+			method="download">
+		</action>
+		<action name="showImage" class="it.ash.web.actions.DownloadAction"
+			method="showImage">
+		</action>
+		
+		<action name="listaTipi" class="it.crem.server.actions.TipologieAction"
+			method="list">
+			<result name="success" type="tiles">tipologie</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="showTipo" class="it.crem.server.actions.TipologieAction"
+			method="show">
+			<result name="success" type="tiles">tipologia</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="saveTipo" class="it.crem.server.actions.TipologieAction"
+			method="save">
+			<result name="success" type="tiles">esitopriv</result>
+			<interceptor-ref name="myloginStack" />
+		</action>
+		<action name="sendPdf" class="it.crem.server.actions.Welcome"
+			method="sendPdf">
+		</action>
+		<action name="listaGruppi" class="it.crem.server.actions.FotoAction"
+			method="listaGruppi">
+			<result name="success" type="tiles">gruppi</result>
+			<result name="gallerymng" type="tiles">gruppimng</result>
+		</action>
+		<action name="listaFoto" class="it.crem.server.actions.FotoAction"
+			method="listSetOfFoto">
+			<result name="fotolist" type="tiles">fotolist</result>
+			<result name="esito" type="tiles">esitopriv</result>
+		</action>
+		<action name="showGruppo" class="it.crem.server.actions.FotoAction"
+			method="showGruppo">
+			<result name="gruppo" type="tiles">gruppomng</result>
+			<result name="esito" type="tiles">esitopriv</result>
+		</action>
+		<action name="updGruppo" class="it.crem.server.actions.FotoAction"
+			method="updGruppo">
+			<result name="gruppo" type="tiles">gruppomng</result>
+			<result name="esito" type="tiles">esitopriv</result>
+		</action>
+		<action name="addFoto" class="it.crem.server.actions.FotoAction"
+			method="addSetOfFoto">
+			<result name="foto" type="tiles">fotomng</result>
+			<result name="esito" type="tiles">esitopriv</result>
+		</action>
+		<action name="showAlbum" class="it.crem.server.actions.FotoAction"
+			method="showAlbum">
+			<result name="plain" type="tiles">plainalbum</result>
+			<result name="large" type="tiles">sfogliaalbum</result>
+			<result name="single" type="tiles">scorrialbum</result>
+		</action>
+	</package>
+</struts>

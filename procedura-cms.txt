@@ -1,0 +1,11 @@
+Procedura per creare una pagina CMS
+
+creazione template:
+	template
+	elements
+	template_elements (con section,ordine)
+
+istanziazione pagina del template relativo:
+	associazione template (template_oid)
+	per ogni elemento del template creare il relativo blocco poplando i campi id,info,tipo  e i relativi (ordine,section in blocchi_pagina  e element_oid (template_element_oid) in blocchi)
+

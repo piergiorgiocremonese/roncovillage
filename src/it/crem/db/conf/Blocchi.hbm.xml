@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2014 5:19:39 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+	<class name="it.crem.db.conf.Blocchi" table="blocchi" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<!-- <generator class="assigned" /> -->
+			<generator class="sequence">
+				<param name="sequence">blocchi_oid_seq</param>
+			</generator>
+		</id>
+		<!--
+		<many-to-one name="pagina" class="it.crem.db.conf.Pagina"
+			fetch="select" lazy="false">
+			<column name="pagina_oid" />
+		</many-to-one>
+		<property name="paginaId" type="string">
+			<column name="page_id" />
+		</property>
+		-->
+		<property name="bloccoId" type="string">
+			<column name="id" />
+		</property>
+		
+		<property name="info" type="string">
+			<column name="info" />
+		</property>
+		<property name="tipo" type="string">
+			<column name="tipo" />
+		</property>
+		<property name="ordine" type="int">
+			<column name="ordine" />
+		</property>
+		<many-to-one name="templateElement" class="it.crem.db.conf.TemplateElement"
+			fetch="select" lazy="false">
+			<column name="template_element_oid" />
+		</many-to-one>
+		<many-to-one name="Element" class="it.crem.db.conf.Element"
+			fetch="select" lazy="false">
+			<column name="element_oid" />
+		</many-to-one>
+	<set name="items" table="blocco_item" inverse="true"
+			lazy="false" fetch="select">
+			<key>
+				<column name="blocco_oid" />
+			</key>
+			<one-to-many class="it.crem.db.conf.BloccoItem" />
+		</set>
+	</class>
+</hibernate-mapping>

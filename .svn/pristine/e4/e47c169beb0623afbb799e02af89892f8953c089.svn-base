@@ -1,0 +1,51 @@
+<%@taglib prefix="s" uri="/struts-tags" %>
+
+
+<script type="text/javascript">
+var currFoto=0;
+function next(){
+	if (currFoto<listafoto.length){
+		currFoto++;
+		document.getElementById('foto').src = listafoto[currFoto];
+		}else{
+		alert('fine');
+			}
+} 
+function previous(){
+	if (currFoto>0){
+		currFoto=currFoto-1;
+		document.getElementById('foto').src = listafoto[currFoto];
+		}else{
+		alert('inizio');
+			}
+}
+
+var listafoto = new Array();
+<s:iterator var="f" value="files" status="i">
+listafoto[<s:property value="#i.count"/>]= '<s:property value="#f"/>';
+</s:iterator>
+</script>
+
+
+<s:set var="counter" value="0"/>
+
+<div id="mainblock" style="position:absolute;top:10px" >
+<p>
+<a href="showAlbum?tipo=single&oid=<s:property value="oid" />" >Scorri le foto singolarmente</a>
+</p>
+<table>
+<tr>
+<s:iterator var="f" value="fotoList" status="i">
+<s:if test="%{#counter>=5}">
+</tr>
+<s:set var="counter" value="0"/>
+<tr>
+</s:if>
+<td><a href="<s:property value="url"/>" target="_blank" ><img src="<s:property value="url"/>" width="<s:property value="iconwidth"/>" height="<s:property value="iconheight"/>"/></a></td>
+<s:set var="counter" value="%{#counter+1}" />
+</s:iterator>
+</tr>
+</table>
+
+
+</div>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost/ronco</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <mapping resource="it/crem/db/conf/Tipologie.hbm.xml" />
+        <mapping resource="it/crem/db/conf/Periodi.hbm.xml" />
+        <mapping resource="it/crem/db/conf/Quote.hbm.xml" />
+        <mapping resource="it/crem/db/conf/Ragazzi.hbm.xml" />
+        <mapping resource="it/crem/db/conf/Partecipanti.hbm.xml" />
+        <mapping resource="it/crem/db/conf/Presenze.hbm.xml" />
+        <mapping resource="it/crem/db/conf/Pagamenti.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

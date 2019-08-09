@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2016 7:22:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="it.crem.db.conf.FormaUtilizzo" table="forma_utilizzo" schema="public">
+		<id name="oid" type="int">
+			<column name="oid" />
+			<generator class="sequence">
+				<param name="sequence">forma_utilizzo_oid_seq</param>
+			</generator>
+		</id>
+		<property name="tipo" type="string">
+			<column name="tipo" />
+		</property>
+		<property name="attivo" type="integer">
+			<column name="attivo" />
+		</property>
+		<property name="giornata" type="string">
+			<column name="giornata" />
+		</property>
+		
+	</class>
+</hibernate-mapping>
